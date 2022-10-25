@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-card-list',
@@ -8,19 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class CardListComponent implements OnInit {
   cards = [
     {
-      id: 'a',
-      name: 'Mrs.A',
-    },
-    {
-      id: 'b',
+      _id: 'b',
       name: 'Mrs.B',
     },
     {
-      id: 'c',
+      _id: 'c',
       name: 'Mrs.C',
     },
   ];
-  constructor() {}
+  constructor(private service: ProductsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh(): void {
+    this.service.getProducts().subscribe((data) => {
+      console.log('data', data);
+      this.cards = data;
+    });
+  }
 }

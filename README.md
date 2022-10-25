@@ -10,7 +10,7 @@
 ```
  npm i cypress --save-dev
  npm run start
- npm run cypress open
+ npm run cypress open (  npx cypress open)
 ```
 
 configure e-2-e enviroment step by step folloing the wizard
@@ -26,3 +26,11 @@ configure e-2-e enviroment step by step folloing the wizard
 - main commands: cy.visit(..), cy.get(..),cy.go(..), cy.location("pathname").should("eq","..")
 
   ![navigation](/screenshots/navigation.png)
+
+## Unit Test
+
+- use Karma + Jasmine
+
+```
+ng test
+```

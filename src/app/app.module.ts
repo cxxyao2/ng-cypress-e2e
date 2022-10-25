@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  HttpClientModule,
+  HttpClientJsonpModule,
+  HTTP_INTERCEPTORS,
+  HttpClientXsrfModule,
+} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CardListComponent } from './components/card-list/card-list.component';
@@ -25,7 +31,15 @@ import { AppRoutingModule } from './app-routing.module';
     TemplateFormComponent,
     ReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    HttpClientXsrfModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

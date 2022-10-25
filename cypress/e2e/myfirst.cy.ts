@@ -33,4 +33,9 @@ describe('my app', () => {
     cy.go(-1);
     cy.get('a[id]').eq(0).click();
   });
+
+  it('having link dashboard', () => {
+    cy.visit('http://localhost:4200/cards');
+    cy.get('ul').children('li').eq(0).should('have.text', 'Dashboard');
+  });
 });

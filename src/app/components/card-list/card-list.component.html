@@ -1,4 +1,6 @@
 <h2>card-list</h2>
-<a  id="{{cardId.id}}" *ngFor="let cardId of cards" routerLink="/cards/{{ cardId.id }}">
+<a  id="{{cardId._id}}" *ngFor="let cardId of cards" routerLink="/cards/{{ cardId._id }}">
   {{ cardId.name }}
 </a>
+<br/>
+<button data-test="refresh" (click)="refresh()">refresh</button>

@@ -8,10 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { GuardCardGuard } from './shared/guard-card.guard'
+
 const routes: Routes = [
   { path: 'templateform', component: TemplateFormComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cards', component: CardListComponent },
+  { path: 'cards', component: CardListComponent,
+  canActivate:[GuardCardGuard]
+},
   { path: 'home', component: HomeComponent },
   { path: 'cards/:id', component: CardComponent },
   { path: 'dashboard', component: DashboardComponent },
