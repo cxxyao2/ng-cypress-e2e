@@ -1,0 +1,4 @@
+<h2>card-list</h2>
+<a  id="{{cardId.id}}" *ngFor="let cardId of cards" routerLink="/cards/{{ cardId.id }}">
+  {{ cardId.name }}
+</a>

@@ -1,0 +1,43 @@
+<div class="container">
+  <div>
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="model.name"
+          name="name"
+          #name="ngModel"
+        />
+        <div [hidden]="name.valid || name.pristine">Name is required</div>
+      </div>
+      <div>
+        <label for="power">Hero Power</label>
+        <select
+          id="power"
+          name="power"
+          required
+          [(ngModel)]="model.power"
+          #power="ngModel"
+        >
+          <option *ngFor="let pow of powers">{{ pow }}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine">Power is required</div>
+      </div>
+      <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" (click)="newHero(); heroForm.reset()">
+        New Hero
+      </button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div>{{ model.alterEgo }}</div>
+    <br />
+    <button type="button" (click)="submitted = false">Edit</button>
+  </div>
+</div>
