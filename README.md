@@ -2,8 +2,8 @@
 
 ## version
 
-- Angular: 14
-- Cypress: 10
+- Angular: 14.2.0
+- Cypress: 10.10.0
 
 ## Set up
 
